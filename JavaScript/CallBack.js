@@ -1,5 +1,5 @@
 // Call back Example 1
-/*
+
 function name(name){
     console.log(`Hi ${name}`)
 };
@@ -74,7 +74,7 @@ initializeCamera("See3CAM_CU22", 88, (model, temperature) => {
 
 //Example 6
 
-/*const requestCameraModel = (questions, callback) => {
+const requestCameraModel = (questions, callback) => {
     const readline = require("readline")
 
     const rl = readline.createInterface({
@@ -124,7 +124,7 @@ const CameraDetails = (callback) => {
 
 CameraDetails(camera => {
     console.log(camera)
-})*/
+})
 
 //Example 8
 
