@@ -41,10 +41,10 @@ printCameraReport("AR0234", "1280x720", 120);
 
 function checkTemperature(tempertaure){
     if (tempertaure > 70){
-        return "OVER HEATING"
+        return true
     }
     else{
-        return "NORMAL"
+        return false
     }
 }
 
@@ -75,3 +75,61 @@ function generateCameraReport(camera){
 Report = generateCameraReport(camera)
 
 console.log(Report)
+
+const cameras = [
+    {
+        model: "IMX678",
+        temperature: 82,
+        resolution: "1920x1080",
+        fps: 30
+    },
+    {
+        model: "IMX900",
+        temperature: 82,
+        resolution: "1920x1080",
+        fps: 30
+    },
+    {
+        model: "AR0234",
+        temperature: 82,
+        resolution: "1920x1080",
+        fps: 30
+    }
+]
+
+const totalCam = cameras.length;
+let healthyCam = 0;
+let unhealthyCam = 0; 
+
+for (const camera of cameras){
+    const report = generateCameraReport(camera);
+    if (checkTemperature(camera.temperature)){
+        unhealthyCam++;
+    }
+    else{
+        healthyCam++;
+    };
+}
+console.log(`Total Camera       : ${totalCam}`);
+console.log(`Healthy Camera     : ${healthyCam}`);
+console.log(`Unhealthy Camera   : ${unhealthyCam}`)
+
+//For Each Function 
+
+cameras.forEach(function(camera){
+    console.log(`Camera : ${camera.model}`)
+})
+
+const cameraModels = cameras.map(function(camera){
+    return camera.model
+});
+
+console.log(cameraModels);
+
+const statusOfCam = cameras.map(function(camera){
+    return checkTemperature(camera.temperature)
+})
+
+console.log(statusOfCam);
+
+
