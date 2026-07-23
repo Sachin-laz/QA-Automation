@@ -1,0 +1,7 @@
+1. <button>Login</button>	getByRole('button', { name: 'Login' })
+2. <a>Home</a>	getByRole('link', { name: 'Home' })
+3. <input placeholder="Email">	getByPlaceholder('Email')
+4. <label>Email</label><input>	getByLabel('Email')
+5. <h1>Dashboard</h1>	getByRole('heading', { name: 'Dashboard' })
+6. <p>Welcome</p>	getByText('Welcome')
+7. <div data-testid="save-btn">	getByTestId('save-btn')
